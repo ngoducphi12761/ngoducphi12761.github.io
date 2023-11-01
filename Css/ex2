@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <label style="border: 1px solid blue;"> lable 1</label>
+    <label style="border: 1px solid blue;"> lable 2</label>
+    <div style="border: 1px solid red; padding: 20px;"> this is test</div>
+    <div style="border: 1px solid red; padding: 20px;"> this is test 2</div>
+    <div style="border: 1px solid red; margin: 20px;"> this is test 2</div>
+    <p> asdfasdf</p>
+</body>
+</html>

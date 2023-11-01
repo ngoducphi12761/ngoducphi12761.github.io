@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .d1{
+            background-color: red;
+            background-image: url("../Test1/image/glassesCat.jpg");
+            border: 1px solid  black;
+            border-radius: 1cap;
+            padding: 20px;
+        }
+        label{
+            background-color: yellow;
+            border: 1px solid  black;
+            max-width: 350px;
+            background-image: url("../Test2/image/doubleCat.jpeg");
+            padding: 10px;
+        }
+        .d2{
+            background-color: red;
+            background-image: url("../Test1/image/glassesCat.jpg");
+            border: 1px solid  black;
+            border-radius: 1cap;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="d1">Section 1</p>
+    <p class="d2">Section 2</p>
+    <p class="d3">Section 3</p>
+
+    <label class="d2"> background-color</label>
+    
+
+    <div class = "cl"> this is a class </div>
+    <div style="border: 1px solid red; padding: 10px;"> this is test</div>
+</body>
+</html>
