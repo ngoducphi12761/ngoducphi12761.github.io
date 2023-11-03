@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Bootstrap JavaScript from a CDN (optional) -->
+    <title>Document</title>
+    <style>
+       .news-container {
+            border: 1px solid blue;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+
+        }
+
+        .news-time {
+            font-size: 0.9em;
+            color: white;
+            border: 0px solid blue;
+            z-index: 2;
+            position: relative;
+            top: -40px;
+            left: 10px;
+        }
+
+        .news-item-title {
+            font-size: 0.9em;
+            color: white;
+            border: 0px solid blue;
+            z-index: 2;
+            position: relative;
+            top: -40px;
+            left: 100px;
+            display: flex
+        }
+
+        .news-item {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .news-item img {
+            z-index: -1;
+            width: 100%;
+            object-fit: cover
+        }
+
+        .article-container {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            /* justify-content: space-between; */
+            gap: 20px;
+        }
+
+        .article {
+            width: 250px;
+            height: 100px;
+            border: 0px solid blue;
+            padding: 15px;
+            /* display: flex;
+       
+            justify-content: space-between; */
+            position: relative;
+        }
+
+        .read-time {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            /* background-color: rgba(0, 0, 0, 0.7); */
+            color: black;
+            padding: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .article h3 {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #333;
+            position: relative;
+            left: 10px;
+            /* D
+            .ark color for better readability */
+        }
+
+        .article img {
+            float: left;
+            border: 1px solid blue;
+        }
+        .super{
+            width: 500px;
+            height: 500px;
+        }
+        .featured-story {
+            position: absolute;
+
+            border: 1px solid red;
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .featured-story img {
+            width: 100%;
+            height: 100%;
+            
+        }
+        .label {
+            font-size: 0.9em;
+            color: white;
+            /* position: absolute; */
+            /* text-align: center; */
+       
+            margin-bottom: 0.5em;
+        }
+        .text-content {
+
+            position: absolute;
+            /* bottom: 15%;
+            left: 5%; */
+            bottom: 15px;
+            left: 20px;
+            min-width: 60%;
+            color: white;
+            overflow: hidden;
+        }
+      .img-main{
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .main{
+        background-image: url('pics/callie-in-lunar-lava-tunnel-page-2.webp');
+        width: 100%;
+        height: 100%;
+      }
+      .black-strip{
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .live-now-strip{
+        display: flex;
+        justify-content: space-between;
+        
+        width: 90%;
+        padding: 10px;
+        align-items: center;
+      }
+    </style>
+</head>
+<body style="height: 100%; width: 100%;">
+    <div style="padding: 10px ;height: 20%; background-color: rgb(86, 86, 211); color: antiquewhite;
+    justify-content: center; display: flex;
+    ">
+   
+    <label> <label style="font-weight: bold; font-size: 20px;">  Welcome to the new NASA website.</label>
+      We’re working to continuously improve your web experience. If you don't find what you are looking for,</label>
+    </div>
+
+    <div class="black-strip" style="padding: 10px ;height: 20%; background-color: black; color: antiquewhite;">
+      <div>
+        <label style="margin-right: 5px;"
+        >Explore</label>
+        <div style="display: inline-block;border: 0.1px solid rgb(216, 216, 216);
+        width: 50%;
+        ">sdsd</div>
+      </div>
+      <div>
+        <img src="pics/nasa-logo.png"
+        style="width: 50%;"
+        >
+      </div>
+      <div style="display: flex;justify-content: end;">
+        <label style="margin-right: 10px;">News & Events</label>
+        <label style="margin-right: 10px;">Multimedia</label>
+        <label style="margin-right: 10px;">NASA+</label>
+      </div>
+    </div>
+    <hr style="margin-top: 60px; width: 90%;"/>
+
+    <div class="live-now-strip">
+
+      <div style="width: 20%;"> <img src="pics/draw.jpg" style="border-radius: 50%" width="80%">
+      </div>
+      <div style="width: 65%; margin-bottom: 20px;">
+        <h1 style="margin-bottom: 0px;">LIVE NOW</h1>
+        Coverage of U.S. Spacewalk 89 at the International Space Station
+      </div>
+      <div>
+        <button style=" border-radius: 50%; background-color: red; color: aliceblue;">-></button>
+      </div>
+    </div>
+
+    <div class="main">
+      <img class="img-main" src="pics/draw.jpg" >
+      <img class="img-main"  src="pics/draw.jpg" >
+      <img class="img-main"  src="pics/draw.jpg" >
+      <img class="img-main"  src="pics/draw.jpg" >
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; margin-top: 70px; margin-left: 20px;">
+        <div style="color: white;">
+          <h1 style="font-size:40px;">NASA's Curious Universe</h1>
+          <label style="font-size: 18px;">NASA, namely, The National Aeronautics and Space Administration, is an executive branch agency of the United States government, responsible for the nation’s civilian space program and aeronautics and aerospace research.</label>
+          <button style="display: block; border-radius: 10px; padding: 10px; margin-top: 15px; width: 50%; color: white; background-color: red;">Listen</button> 
+        </div>
+      </div>
+
+      <div style=" color: white; display: grid; margin-top: 30px; grid-template-columns: 1fr 1fr 1fr;">
+        <div >
+          <hr style="width: 90%;">
+          <label style="margin-left: 30px;">PODCAST</label>
+          <h1 style="margin-top: 10px;margin-left: 30px;">Universo curioso de la NASA</h1>
+        </div>
+        <div >
+          <hr style="width: 90%;">
+          <label style="margin-left: 30px;">PODCAST</label>
+          <h1 style="margin-top: 10px;margin-left: 30px;">Houston we have a podcast</h1>
+        </div>
+        <div >
+          <hr style="width: 90%;">
+          <label style="margin-left: 30px;">PODCAST</label>
+          <h1 style="margin-top: 10px;margin-left: 30px;">Small steps, giant leaps</h1>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- dsdjsndjk -->
+    <div style="height: 1800px;">
+      <div
+      style="margin-top: 30px;border: 0px solid green; display: flex; position: relative; justify-content: space-between; align-items: center;">
+      <div>
+          <h1>Featured News</h1>
+      </div>
+      <div style="border: 0px solid red; ">
+          <h3 >More NASA News <img src="pics/AwhiteBabyCate.jpeg" style="width: 10px;"></h3>
+      </div>
+  </div>
+  
+  <div class="news-container">
+      <!-- First News Item -->
+      <div class="news-item" style="border: 1px solid green; height: 100%; width: 100%;">
+  
+          <img src="pics/cateDoubleCate.jpeg" alt="2023 Ozone Hole Image" style="display: block;">
+  
+  
+          <!-- <span class="news-item-title">2023 Ozone Hole Ranks 16th Largest, NASA and NOAA Researchers Find</span> -->
+      </div>
+      <div class="news-item" style="border: 1px solid red;height: 100%; display: flex;">
+          <!-- <span class="news-time">4 MIN READ</span> -->
+          <img src="pics/AwhiteBabyCate.jpeg" style="display: block; ">
+  
+          <!-- <div class="news-item-title">2023 Ozone Hole Ranks 16th Largest, NASA and NOAA Researchers Find</div> -->
+      </div>
+      <div class="news-item" style="border: 1px solid red; gap: 20px; display: grid; grid-template-rows: auto auto;">
+          <div style="display: flex; width: 100%;">
+              <img src="pics/headCoverCat.jpg" alt="2023 Ozone Hole Image">
+          </div>
+          <!-- <span class="news-time">4 MIN READ</span> -->
+  
+          <div class="news-item" style="display: flex; width: 100%;">
+              <!-- <span class="news-time">4 MIN READ</span> -->
+              <img src="pics/LyingCateWithBellyUpward.jpeg" alt="2023 Ozone Hole Image">
+  
+              <!-- <div class="news-item-title">2023 Ozone Hole Ranks 16th Largest, NASA and NOAA Researchers Find</div> -->
+          </div>
+          <!-- <div class="news-item-title">2023 Ozone Hole Ranks 16th Largest, NASA and NOAA Researchers Find</div> -->
+      </div>
+  
+      <!-- ... Repeat for the other news items ... -->
+  
+  </div>
+  <div class="article-container">
+      <div class="article">
+          <img src="pics/1-grace-fo-water-maps-with-dates.jpg"
+              style="border-radius:50%;width:200px;height:200px;width: 100px;height: 100px;">
+          <span class="read-time">4 MIN READ</span>
+          <h3>Data From NASA’s WISE Used to Preview Lucy Mission’s Asteroid Dinkinesh</h3>
+      </div>
+      <div class="article">
+  
+          <img src="pics/1-wise-lucy-dinkinesh.png"
+              style="border-radius:50%;width:200px;height:200px;width: 100px;height: 100px;" alt="SWOT Mission Image">
+  
+  
+          <span class="read-time">3 MIN READ</span>
+          <h3>See SWOT Mission’s Unprecedented View of Global Sea Levels</h3>
+  
+  
+      </div>
+      <div class="article">
+          <img src="pics/1-yukondelta-usfws.webp"
+              style="border-radius:50%;width:200px;height:200px;width: 100px;height: 100px;" alt="Technologies Image">
+          <span class="read-time">4 MIN READ</span>
+          <h3>NASA Technologies Receive Multiple Nods in TIME Inventions of 2023</h3>
+      </div>
+      <div class="article">
+          <img src="pics/spacewalker-woody-hoburg.jpg"
+              style="border-radius:50%;width:200px;height:200px;width: 100px;height: 100px;" alt="Rocket Image">
+          <span class="read-time">6 MIN READ</span>
+          <h3>NASA Rocket to See Sizzling Edge of Star-Forming Supernova</h3>
+      </div>
+  </div>
+  <div class="super">
+      <div class="featured-story">
+          <img src="pics/earth-at-night-north-america-east-coast.jpg" alt="Ganymede's Surface">
+          <div class="text-content">
+              <span class="label">🔍 FEATURED STORY</span>
+              <h1>Salts and Organics Observed on Ganymede’s Surface by NASA's Juno</h1>
+              <p>Data collected by NASA's Juno mission indicates a briny past may be bubbling to the surface on
+                  Jupiter’s
+                  largest moon....</p>
+              <a href="#" class="read-more" ><h2 style="color: aliceblue;">Read the Story ➔</h2></a>
+          </div>
+      </div>
+  </div>
+  <br>
+  <div>
+  
+  </div>
+  
+  </div>
+  
+
+
+
+
+  <!-- djkjfbgjkdkfhhsdjfsdk -->
+
+    <div style="background-color: black; width: 100%; height: 600px;">
+      <img class="img-main" src="pics/nasa-logo.png">
+      <div style="height: 45%;color: white ;display: grid; grid-template-columns: 7fr 4fr 4fr 4fr 5fr;">
+        <div style="margin-left: 15px; height: 50px;" >
+        <h2>The National Aeronautics and Space Administration</h2>
+        <label>NASA explores the unknown in air and space, innovates for the benefit of humanity, and inspires the world through discovery.</label>
+        <h1></h1>
+        <a style="margin-top: 5px; color: white;" href="">About NASA's Mission</a>  
+        <br>
+        <h3 style="display: inline-block; margin-right: 10px;">Join Us </h3> 
+        
+        <button style=" border-radius: 50%; background-color: red; color: aliceblue;">-&gt;</button>
+      </div>
+        <div style="margin-left: 15px;height: 50px;" >
+        <p>Home</p>
+        <p>News</p>
+        <p>Multimedia</p>
+        <p>NASA TV</p>
+        <p>Missions</p>
+    
+
+        </div>
+        <div style="margin-left: 15px; height: 50px;" >
+          <p>Humans in Space</p>
+          <p>Earth & Climate</p>
+          <p>The Solar System</p>
+          <p>The Universe</p>
+          <p>Science</p>
+        </div>
+        <div style="margin-left: 15px;  height: 50px;" >
+          <p>Aeronautics </p>
+          <p> Technology</p>
+          <p>Learning Resources</p>
+          <p> About NASA</p>
+          <p> NASA en Español</p>
+        </div>
+        <div style="margin-left: 15px;  height: 50px;" >
+        <h3 style="opacity: 0.7;">Follow NASA</h3>
+        <img src="pics/download.png" style="width: 23%;">
+        <img src="pics/download.png" style="width: 23%;">
+        <img src="pics/download.png" style="width: 23%;">
+        <img src="pics/download.png" style="width: 23%;">
+        
+
+       <p> More NASA Social Accounts</p>
+       <p>  NASA Newsletters</p>
+
+        </div>
+      
+      </div>
+    <hr style="width: 95%;">
+    <div style="margin-top: 25px;opacity: 0.8; ;color: white; margin-left: 15px;">
+      <label>
+        Sitemap</label>
+ 
+        <label style="color: white; margin-left: 15px;">
+          For Media</label>
+ 
+          <label style="color: white; margin-left: 15px;">
+            Privacy Policy</label>
+            <label style="color: white; margin-left: 15px;">
+FOIA</label>
+<label>
+No FEAR Act</label style="color: white; margin-left: 15px;">
+<label style="color: white; margin-left: 15px;">
+Office of the IG</label>
+<label style="color: white; margin-left: 15px;">
+Budget & Annual Reports</label>
+<label style="color: white; margin-left: 15px;">
+Agency Financial Reports</label>
+ 
+<label style="color: white; margin-left: 15px;"> NASA</label>
+ <label style="color: white; margin-left: 15px;">Accessibility</label>
+
+</div>
+<div style="margin-top: 25px; opacity: 0.8;">
+<label style="color: white; margin-left: 15px;">
+Page Last Updated:
+Nov 01, 2023</label>
+<label style="color: white; margin-left: 15px;">
+  Page Editor:
+Brian Dunbar
+</label>
+
+<label style="color: white; margin-left: 15px;">
+ 
+Responsible NASA Official:
+Brian Dunbar
+      </label>
+    </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
