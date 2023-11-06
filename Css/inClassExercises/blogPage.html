@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            margin-right: 10px;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .below {
+            padding: 10px;
+            background-color: darkgrey;
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            column-gap: 10px;
+            border: 1px solid black;
+        }
+
+        image {
+   
+            object-fit: cover;
+            width: 100px;
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div>
+            <div style="font-weight: bold;">Bidhan Tech Blog</div>
+            <div> An Example Technology Blog</div>
+        </div>
+        <div style="display: flow-root">
+            <label>Home</label>
+            <label>Recent Pots</label>
+            <label>Blog</label>
+        </div>
+    </div>
+
+    <div class="below">
+
+        <div style="background-color: white;">
+            <div>
+                <div>An Example post</div>
+                <div>An Example post</div>
+            </div>
+            <div style=" display: flex; margin-top: 10px; gap: 10px;">
+                <img src="image/dawn.jpeg" alt="" height="80px" >
+                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit aperiam, beatae temporibus
+                    delectus, possimus voluptatem at quod dignissimos ipsam molestiae, accusamus nulla saepe culpa id in
+                    qui numquam officiis libero
+                    <div style="border: 1px solid white; background-color: blue; color: white;width: 20%;padding: 5px;">
+                        Read More
+                    </div>
+                </div>
+              
+            </div>
+
+        </div>
+
+        <div style="background-color: white;">
+
+            <div style="border-bottom: 5px solid red; padding: 2px; ">search</div>
+            <div style="display: flex; gap: 5px;padding: 5px;">
+                Search For
+                <div style="border: 1px solid black;padding-right: 10px;padding-left: 10px;"> Search</div>
+                <div style="background-color: gray; padding: 10px;">Search</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

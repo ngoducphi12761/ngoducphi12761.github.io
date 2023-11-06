@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .superLayout {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            column-gap: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        td,
+        tr,
+        th {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="superLayout">
+        <div style="background-color: gray;border: 1px solid black;padding: 10px;">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum nobis magnam est amet praesentium eos
+            rerum. Nihil reiciendis, esse veritatis maiores aliquid ipsum, vero aperiam, a voluptates perspiciatis
+            debitis quos.
+        </div>
+        <div>
+            <div style="background-color: orange; padding: 10px;"> color header</div>
+            <div style="font-weight: bold;font-size: larger; padding-top: 20px; ">
+                Header
+            </div>
+            <div style="border-left: 1px solid gray; height: 150px;">
+                <label for="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sunt inventore
+                    repudiandae optio magnam nesciunt nostrum ad laborum beatae eum. Fugit, numquam aspernatur eaque
+                    eius dicta ipsam quisquam neque illo?</label>
+            </div>
+            <label style="font-size: 20px; font-weight: bold;">Some Diseases</label>
+            <table>
+                <tbody>
+                    <thead>
+                        <th> Header 1</th>
+                        <th>Header 2</th>
+                    </thead>
+                    <tr>
+                        <td> Col1</td>
+                        <td>Col2</td>
+                    </tr>
+                    <tr>
+                        <td> Col1</td>
+                        <td>Col2</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div style="display: flex; gap: 1%">
+                <img src="image/dawn.jpeg" alt="" width="24%;">
+                <img src="image/dawn.jpeg" alt="" width="24.5%">
+                <img src="image/dawn.jpeg" alt="" width="24%">
+                <img src="image/dawn.jpeg" alt="" width="24.5%">
+            </div>
+            <p style="font-size: 50px; ">Some Info</p>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="margin-right: 10%;" for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum totam corporis excepturi repudiandae consequuntur repellat sed delectus deleniti nostrum deserunt consequatur neque rem, alias ab iste. Perspiciatis quidem architecto harum!</div>
+                <div for="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum totam corporis excepturi repudiandae consequuntur repellat sed delectus deleniti nostrum deserunt consequatur neque rem, alias ab iste. Perspiciatis quidem architecto harum!</div>
+            </div>
+           
+        </div>
+       
+    </div>
+</body>
+
+</html>

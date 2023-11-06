@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .superContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.8fr;
+            row-gap: 20px;
+            color: white;
+            column-gap: 20px;
+            justify-content: center;
+        }
+
+        .col1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+        .col2{
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            column-gap: 40px;
+            align-content: start;
+            font-size: 14px;
+            font-style: italic;
+            row-gap: 20px;
+       
+        }
+        footer{
+            display: flex;
+            flex-direction: column;
+            padding: 50px 100px;
+            background-color: black;
+            width: 80%;
+        }
+        .col3{
+            display: flex;
+            flex-wrap: wrap;
+            align-content:flex-start;
+            
+        }
+        .imaClass{
+            object-fit: contain;
+            width: 40%;
+        }
+        .footerAdd{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            size: 10px;
+        }
+        .emailButton{
+            background-color: cadetblue;
+            display: flex; 
+            justify-content: space-between;
+            color: white;
+            border-radius: 40px;
+            width: 90%;
+            height: 80%;
+   
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <div class="superContainer">
+            <p>About Me</p>
+            <p>Latest Tweet</p>
+            <p>Instagram</p>
+            <div>
+                <div class="col1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Nulla at volutpat diam ut venenatis tellus. Sed id semper risus
+                        Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</p>
+                    <div>
+                        <img src="../../images/headCoverCat.jpg" style="height: 50px;">
+                        <label for="">he is a cat</label>
+                    </div>
+                    <div>
+                        <img src="../../images/headCoverCat.jpg" style="height: 50px;">
+                        <label for="">email.com</label>
+                    </div>
+
+                    <div class="emailButton">
+                        <p style="padding: 0px 30px;">enter your e-mail</p>
+                        <div
+                            style="background-color: red;color: white;border-radius: 40px;margin-top: 0px;margin-bottom: 0px;margin-right: 0px;  height: 100%;display: flex; align-items: center;">
+                            <p style="padding: 0px 30px;">send</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col2">
+                <img src="../../images/headCoverCat.jpg" height="50px">
+                <lable>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</lable>
+                <img src="../../images/headCoverCat.jpg" height="50px">
+                <lable>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</lable>
+                <img src="../../images/headCoverCat.jpg" height="50px">
+                <lable>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Nulla at volutpat diam ut venenatis tellus. Sed id semper risus</lable>
+            </div>
+            <div class="col3">
+                <img class="imaClass" src="../../images/lionCate.jpg" height="50px">
+                <img class="imaClass" src="../../images/lionCate.jpg" height="50px">
+                <img class="imaClass" src="../../images/lionCate.jpg" height="50px">
+                <img class="imaClass" src="../../images/lionCate.jpg" height="50px">
+            </div>
+        </div>
+        
+       <div style="border-top: 1px solid white;">&nbsp;</div>
+
+        <div class="footerAdd" style="color: white;">
+            <div class="footerAdd">
+                <p>Home</p>
+                <p>About</p>
+                <p>Our Works</p>
+                <p>Services</p>
+                <p>Blog</p>
+                <p>Contacts</p>
+            </div>
+
+            <div>
+                <p>Colorlib</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

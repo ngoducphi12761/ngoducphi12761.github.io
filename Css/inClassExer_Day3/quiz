@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* article article :nth-child(2) {
+            color: blue;
+        } */
+        /* article article>p+p {
+            color: blue;
+        } */
+
+        /* #header {
+            color: green;
+        }
+
+        div {
+            background-color: yellow;
+            border: 2px solid blue;
+            color: red;
+        } */
+
+        /* div#headerContent header{
+            color:blue;
+        }
+        div #header[id]{
+            color:green;
+        } */
+        /* p:nth-child(2) .myClass {
+            color: yellow;
+        } */
+        /* section section>div:nth-child(2) {
+            color: blue;
+        } */
+        /* article span:nth-child(2) {
+            color: blue;
+        } */
+        /* 
+        #myDIV {
+            color: white !important; 
+             color: white; 
+        }
+
+        article #myDIV {
+            background-color: blue;
+            color: red;
+        }
+         */
+        /* span ~ i{
+            color: blue;
+         } */
+        /* div>a {
+            color: brown;
+        } */
+        section section div:nth-child(1){
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <h4 id="header">
+        <>My Paragraph</p>
+        <div> My DIV</div>
+    </h4> -->
+
+    <!-- <div id="headerContent">
+        <header id="header"> Header</header>
+    </div> -->
+
+    <!-- <p>Fruits</p>
+    <p>Grapes</p>
+    <article>Berries
+        <article>Raspberry
+            <p>Summer fruiting</p>
+            <p>Autumn fruiting</p>
+        </article>
+        <p>Pear</p>
+        <p>Grapes</p>
+    </article> -->
+    <!-- <div></div>
+    <p>Rose</p>
+    <p class="myClass2">
+        Lily
+        <label class="myClass">Chamoline</label>
+
+        <label class="myClass">Hibiscus</label>
+        <label>champa</label>
+    </p>
+    <p class="myClass">sunflower</p> -->
+
+    <!-- <div>Skills</div>
+    <p>Java</p>
+    <section>Javascript
+        <section>Classes
+            <div>Inheritance</div>
+            <div>Inheritance2</div>
+            <p>Java</p>
+        </section>
+        <div>Modules</div>
+    </section> -->
+    <!-- <article>
+        <label> Roses</label>
+        <span>Hibiscus</span>
+        <article>
+            <span>Shrubs</span>
+            <span>Shrubs</span>
+            <div>
+                <div>Shrubs</div>
+                <span>Trees</span>
+            </div>
+        </article>
+    </article> -->
+    <!-- <article>
+        <div id="myDIV"> Hello </div>
+    </article> -->
+
+    <!-- <header role="banner">
+        <span>Vedas</span>
+        <span>Upanishads</span>
+        <nav id="mastLogin">
+            <div>
+                <section>
+                    <a title="Academic alerts">
+                        <span>Taitreya</span>
+                        <ul>
+                            <li>Markandeya</li>
+                        </ul>
+                        <span>Isha Vyasa</span>
+                    </a>
+                    <a>
+                        <span>Rig Veda</span>
+                    </a>
+                </section>
+            </div>
+            <div>
+                <a title="View All Sites">
+                    <i class="sites-icon"> sites-icon</i>
+                    <span class="all-sites">Sites</span>
+                </a>
+            </div>
+            <ul>
+                <li>Mind</li>
+            </ul>
+            
+        </nav>
+        <i class="sites-icon"> this is test</i>
+    </header> -->
+    <div>Skills</div>
+    <p>Java</p>
+    <section>Javascript
+        <section>Classes
+            <div>Inheritance</div>
+        </section>
+        <div>Modules</div>
+    </section>
+</body>
+
+</html>

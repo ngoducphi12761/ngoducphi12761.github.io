@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imageTriagle {
+            text-align: center;
+            margin: auto;
+        }
+
+        img {
+            object-fit: over;
+        }
+
+        .margin-right {
+            margin-right: 20px;
+        }
+        .col1{
+            display: grid;
+            grid-template-columns: 0.5fr 1fr;
+            column-gap: 20px;
+        }
+        .footerOuterDiv{
+            border: 1px solid red;
+            width: 80%;
+            height: 50px;
+            margin-top: 10px;
+            float: right;
+            font-size: 14px;
+        }
+        .footerInnerDiv{
+            border: 1px solid red;
+            margin: 2%;
+            height: 90%;
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imageTriagle">
+        <div> <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%;"></div>
+        <div>
+            <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%;"
+                class="margin-right">
+            <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%; ">
+        </div>
+        <div>
+            <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%;"
+                class="margin-right">
+            <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%;"
+                class="margin-right">
+            <img src="image/dawn.jpeg" alt="" height="30px" width="30px" style="border-radius: 50%;">
+        </div>
+    </div>
+    <div class="col1">
+        <div style="background-color: antiquewhite;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus debitis id nostrum facilis, dolorem
+                non mollitia provident consectetur beatae ab possimus cupiditate, magnam eum tenetur ratione velit a,
+                rerum
+                corporis!</p>
+        </div>
+        <div style="background-color: aqua; align-self: flex-start;" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus debitis id nostrum facilis, dolorem
+                non mollitia provident consectetur beatae ab possimus cupiditate, magnam eum tenetur ratione velit a,
+                rerum
+                corporis!</p>
+        </div>
+    </div>
+    <div class="footerOuterDiv">
+        <div class=" footerInnerDiv"> 
+            <div class="footerInnerDiv" style="display: flex; align-items: center; justify-content: center;text-align: center;"">
+                <div style="display: flex; align-items: center; justify-content: center;text-align: center;">The End</div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
