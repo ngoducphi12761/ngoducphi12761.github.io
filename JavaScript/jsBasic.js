@@ -193,3 +193,6 @@ function indexOf(str, query) {
 
   const n1 = parseInt(" 45 is the answer 425");
   console.log(n1);
+
+
+  

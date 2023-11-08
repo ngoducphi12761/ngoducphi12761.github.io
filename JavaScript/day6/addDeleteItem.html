@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $('document').ready(function () {
+            // $("button").click(add);
+        })
+        var prodcutArray = [{ name: 'dd', price: 30, image: '../images/lionCate' }, { name: 'dddd', price: 30 }];
+        localStorage.setItem('inventory', JSON.stringify(prodcutArray));
+        function add() {
+            // console.log(this)
+            let itemName = $('#itemName').val()
+            let itemPrice = $('#itemPrice').val()
+            let itemQuantity = $('#itemQuantity').val();
+
+            let newRow = $('<tr></tr>')
+            let html = '<td for="itemName">' + itemName + '</td><td for="itemPrice">'
+                + itemPrice + '</td><td for="itemQuantity">' + itemQuantity + '</td><td>'
+                + '<button onclick="editRow(this);">Edit</button></td><td>'
+                + '<button onclick="deleteRow(this);">Delete</button></td>';
+
+            newRow.html(html);
+            let table = $('#myTable');
+            table.append(newRow);
+        }
+        function editRow(self) {
+            console.log(self)
+            let selectedRow = $(self).parent().parent();
+            selectedRow.children().each(function (idx, element) {
+                let child = $(element);
+                let content = child.html().trim();
+                let itemId = child.attr('for');
+                $('#' + itemId).val(content);
+
+            });
+
+        }
+        function deleteRow(self) {
+            $(self).parent().parent().remove();
+        }
+    </script>
+</head>
+
+<body>
+    Name:<input type="text" id='itemName' />
+    Price:<input type="text" id='itemPrice' />
+    Quantity:<input type="text" id='itemQuantity' />
+    <button onclick="add()">Add</button>
+    <table id='myTable'>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </table>
+</body>
+
+</html>

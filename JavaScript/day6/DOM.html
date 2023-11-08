@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let mySelectDIV = document.createElement("div");
+            mySelectDIV.innerHTML= '<label>Country</lable>'
+                +'<select name="skills">'
+                +'<option value= "java">Java</option>'
+                +'<option value="javascript">Javascript</option>'
+                +'<option value= "python" selected>Python</option>'
+                +'</select>';
+                document.body.append(mySelectDIV);
+
+                let myRadioDIV = document.createElement("div");
+                myRadioDIV.innerHTML = '<lable>Gender</lable>'+
+                '<input type="radio" value ="male" /><label> Male</lable>'
+                +'<input type="radio" value="female" checked/><label>Female </label>';
+                document.body.append(myRadioDIV);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

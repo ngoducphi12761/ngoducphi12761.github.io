@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            color: white;
+            background-color: black;
+        }
+
+        .light {
+            color: black; /* Changed to black for better contrast with the yellow background */
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function toggleClass() {
+            let theme = document.querySelector('select[name="theme"]').value;
+            let myP = document.querySelector('p');
+            if (theme === 'dark') {
+                myP.classList.remove('light');
+                myP.classList.add('dark');
+            } else {
+                myP.classList.remove('dark');
+                myP.classList.add('light');
+            }
+            console.log(myP.getAttribute('class'));
+        }
+    </script>
+</head>
+<body>
+    <select name="theme" id="theme-selector">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>
+    <p> Bananas are yellow in color</p>
+    <input type="button" onclick="toggleClass();" value="Submit">
+</body>
+</html>
