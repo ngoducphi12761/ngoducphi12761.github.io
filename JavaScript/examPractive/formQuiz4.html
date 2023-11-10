@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        let objectArray = [{ Name: 'Ram', Age: 30, Skills: ['java', 'javascript'] },
+
+        { Name: 'Shyam', Age: 20, Skills: ['python', 'c'] }];
+        $(function () {
+            let myDiv = $('.student select')
+            let opt = "";
+            for (let each of objectArray) {
+                //     let myOpt = $('<option selected>'+each.Name+'</option>')
+                opt += '<option >' + each.Name + '</option>'
+                //     myDiv.append(myOpt);
+                myDiv.html(opt);
+            }
+
+        })
+        function populate() {
+            let mySecondDiv = $('.ageSkills')
+            mySecondDiv.html("");
+            let myDiv = $('.studentSelect option:selected');
+            console.log("----------", myDiv.val());
+            for (let each of objectArray) {
+
+                if (each.Name == myDiv.val()) {
+                    console.log(buildRow(each));
+                    mySecondDiv.html(buildRow(each))
+                }
+            }
+        }
+        function buildRow(obj) {
+            let row = "";
+
+            for (let each in obj) {
+                if (each == "Name") continue;
+                console.log(each);
+                row += '<lable>' + each + '<lable>';
+                if (each == "Skills") {
+                    for (let eachObj of obj[each]) {
+                        row += '<input type="checkbox" name="" id="" value =' + eachObj + '>' + eachObj
+                    }
+                }
+                if (each === "Age") {
+
+                    row += '<input class="inputText" type="text" value=' + obj.Age + '>'
+                }
+                row += '<br>';
+            }
+            return row;
+        }
+        function extendFunction() {
+            let subRow = ""
+            let skillJava = $('.ageSkills input:checked');
+            let newDiv = $('.subSkills')
+            let newInDiv = $('#newDivIn')
+            if (skillJava.val() == "java") {
+                if (newInDiv.length == 0) {
+                    console.log("------------------------------testt-----------");
+                    subRow += '<div id="newDivIn"><label for="">Subskill</label>' +
+                        '<select name="" id=""> ' +
+                        ' <option selected value="" >Spring</option> ' +
+                        ' <option selected value="" >Hibernate</option> '
+                        + '</select> </div>';
+                        newDiv.html(subRow);
+                }
+            }
+            else {
+                    newInDiv.remove();
+
+                }
+            // newDiv.append(newInDiv);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="student">Select Student
+        <select class="studentSelect" id="">
+            <br>
+        </select>
+        <button onclick="populate()">Populate</button>
+    </div>
+    <div class="ageSkills">
+
+    </div>
+    <div class="subSkills"></div>
+    <!-- <br>
+    <div>Age 
+        <input class="inputText" type="text" value="">
+    </div>
+    <br>
+    <div>
+        Skills:
+        <input type="checkbox" name="" id=""> java
+        <input type="checkbox" name="" id=""> javascript
+    </div>
+    <br> -->
+    <br>
+    <button onclick="extendFunction()">submit</button>
+    <br>
+    <!-- <label for="">Subskill</label>
+    <select name="" id="">
+        <option selected value="" >Spring</option>
+        <option selected value="" >Hibernate</option>
+    </select> -->
+</body>
+
+</html>

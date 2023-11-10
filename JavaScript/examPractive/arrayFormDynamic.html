@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let myDiv = $('<div>Name <input></div>')
+            $('body').append(myDiv);
+            let mytemDiv = $('<div>Description <textarea name="" id="" cols="20" rows="2"></textarea></div>')
+            myDiv.append(mytemDiv)
+            let Skills = $('<div > Skills <select>'+
+                '<option  value="Java">Java</option>'+
+                '<option  value="Python">Python</option>'+
+                '<option  value="Javascript">Javascript</option>'+
+                '</select></div>')
+            myDiv.append(Skills);
+            let myAddress = $('<div> Address <select multiple name=""> <option selected value="Home">Home</option><option  value="Office">Office</option><option  value="Work">Work</option></select></div>')
+            myDiv.append(myAddress);
+            let myGender =$('<div> Gender <input name="gender" type="radio" checked value="Male"> Male <input name="gender" type="radio" value ="Female" >Female</div>')
+            myDiv.append(myGender)
+            let myKills = $('<div> Skills <input  type="checkbox" checked value="Java"> Java <input  type="checkbox" value="Javascript">Javascript</div>')
+        })
+    </script>
+</head>
+
+<body>
+    <!-- <div><input  type="radio" checked > Male <input  type="radio" >Female</div> -->
+    <!-- <div> Skills <input  type="checkbox" checked value="Java"> Java <input  type="checkbox" value="Javascript">Javascript</div> -->
+    <!-- <select multiple name="" id="">
+        <option selected value="">Home</option>
+        <option  value="">Office</option>
+        <option  value="">Work</option>
+    </select> -->
+    <!-- <select>
+        <option  value="">country</option>
+    </section> -->
+    <!-- <input type="text"> -->
+    <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+</body>
+
+</html>

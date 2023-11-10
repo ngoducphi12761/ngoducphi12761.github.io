@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let obj = { tags: ['div', 'label'], text: ['Welcome', 'DIFF'], color: ['blue', 'green'] }
+        $(function () {
+            let myDiv = $('#myDiv')
+            if (myDiv.length === 0) {
+                myDiv = $('<div id="myDiv"></div>');
+                $('body').append(myDiv);
+            }
+            myDiv.html('');
+            let myTag = obj.tags;
+            let divSelect = $('<div>Select Tag: </div>');
+            let mySel1 = $('<select class = "opt1"></select>');
+            divSelect.append(mySel1);
+            for (let each of myTag) {
+                let myOpt = $('<option selected>' + each + '</option>');
+                mySel1.append(myOpt);
+            }
+            myDiv.append(divSelect);
+            let texDiv = $('<div class = "inputText">Select Text: </div>');
+            let textObj = obj.text;
+            for (let each of textObj) {
+                let input = $('<input type="radio" name="text" checked value=' + each + ' ><label for="Welcome">' + each + '</label>');
+                texDiv.append(input);
+            }
+            myDiv.append(texDiv);
+            let colorDiv = $('<div>Select Color: </div>');
+            let colorSelect = $('<select class="colorOpt"></select>');
+            let colorObj = obj.color;
+            for (let each of colorObj){
+                let color = $('<option selected value='+each+'>'+each+'</option>')
+                colorSelect.append(color)
+            }
+            colorDiv.append(colorSelect);
+            myDiv.append(colorDiv)
+            let myButton = $('<button onClick="myFunction()">MyButton</button>')
+            myDiv.append(myButton);
+        })
+        function myFunction(){
+            let myTag = $('.opt1 option:selected').val();
+            let myText = $('.inputText input:checked').val();
+        
+            let myColor = $('.colorOpt option:selected').val();
+            console.log(myColor);
+            $('body').append($('<'+myTag+' style="color:'+myColor+';" >'+myText+'</'+myTag+'>'))
+     
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div>Select Tag: 
+            <select name="selectTag" id="">
+                <option selected value="">lable</option>
+                <option value="">div</option>
+            </select>
+        </div>
+        <div >Select Text: 
+            <input type="radio" value="Welcome" checked name="text"><label for="Welcome">Welcome</label>
+            <input type="radio" value="Welcome" name="text"><label for="DIFFFF">DIFFFF</label>
+        </div>
+        <div>
+            Select Color: 
+            <select>
+                <option selected value="">blue</option>
+                <option value="">orange</option>
+            </select>
+        </div>
+        <button >My Button <Button:s></Button:s></button> -->
+        <div style="color: red;"> this </div>
+        <label for="" style="color: green;"> test</label>
+
+</body>
+
+</html>

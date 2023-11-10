@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #the-border {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            margin-left: 50px;
+        }
+
+        .dot {
+            border: 1px solid black;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            position: absolute;
+            top: 80px;
+            left: 140px;
+        }
+        #food {
+
+            background-size: contain;
+            background-image: url('../apple.png');
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 80px;
+            left: 140px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let board = $('#the-border');
+        let dir = 'top';
+        document.addEventListener('keydown', function (event) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    // if(dir!='top')
+                        dir = 'buttom';
+                    break;
+                case 'ArrowDown':
+                    if(dir == 'buttom')
+                        break;
+                    dir = 'top';
+                    break;
+                case 'ArrowLeft':
+                    // if(dir != 'left')
+                        dir = 'right';
+                    break;
+                case 'ArrowRight':
+                    // if(dir != 'right')
+                        dir = 'left';
+                    break;
+            }
+        });
+        function handleCollision() {
+            let dic = $('#the-border');
+            let border = dic.offset();
+            let element = $('.dot');
+            let position = element.offset();
+         
+
+            if (border.left > position.left || position.left > border.left + 300 || border.top > position.top || position.top > border.top + 200) {
+                alert('game over');
+                clearInterval(interval_id);
+                let button = $('<button onclick="startOver()" id="strart-again-btn">Start Over </button>');
+                $('body').append(button);
+            }
+        }
+        function placeRandomFood(){
+            let width = $('#the-border').width();
+            let height = $('#the-border').height();
+            let xpos = Math.floor(Math.random() * (width-10));
+            let ypos = Math.floor(Math.random() * (height-10));
+            console.log(xpos, ypos);
+            $('#food').css({top : ypos, left : xpos});
+        }
+        function startOver(){
+            $('document').ready(
+                location.reload()
+            );
+        }
+
+            interval_id = setInterval(
+                move, 300
+            );
+            function move() {
+                // placeRandomFood();
+                let dic = $('#the-border');
+                let border = dic.offset();
+                //console.log(border);
+                let element = $('.dot');
+                let position = element.offset();
+                if (dir == 'left') {
+                    element.css({ left: position[dir] + 10 });
+                }
+                if (dir == 'top') {
+                    element.css({ top: position[dir] + 10 });
+                }
+                if (dir == 'buttom') {
+                    element.css({ top: position['top'] - 10 });
+                }
+                if (dir == 'right') {
+                    element.css({ left: position.left - 10 });
+                }
+                handleCollision();
+            }
+    </script>
+</head>
+
+<body>
+    <div id="the-border">
+        
+        <div class="dot"></div>
+        <div id="food"></div>
+        <div class ></div>
+    </div>
+</body>
+
+</html>

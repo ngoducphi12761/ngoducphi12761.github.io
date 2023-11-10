@@ -14,8 +14,8 @@
         localStorage.setItem('inventory', JSON.stringify(prodcutArray));
         function add() {
             // console.log(this)
-            let itemName = $('#itemName').val()
-            let itemPrice = $('#itemPrice').val()
+            let itemName = parseInt($('#itemName').val()) 
+            let itemPrice = parseInt($('#itemPrice').val())  
             let itemQuantity = $('#itemQuantity').val();
 
             let newRow = $('<tr></tr>')

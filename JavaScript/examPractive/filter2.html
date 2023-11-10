@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let arrList = ["Alseny", "Maharishi","Bill","James"]
+        $(function(){
+            buider(arrList);
+        })
+        function buider(list){
+            let mySelect = $('#mySelect')
+            if (mySelect.length ===0){
+                mySelect = $('<select name="" id="mySelect"></select>')
+                $('body').append(mySelect);
+            }
+            mySelect.html('');
+            for(let each of list){
+                let myOption = $('<option value='+each+'>'+each+'</option>')
+                mySelect.append(myOption);
+            }
+        }
+        function filter(){
+            let filterArray = arrList.filter(function(value, num, arr){
+                return value.length >6;
+            })
+            buider(filterArray);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="filter()">filter</button>
+    <select name="" id="mySelect"></select>
+    <option value=""></option>
+</body>
+</html>

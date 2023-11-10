@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+
+        function add(){
+            let html = ""
+            let item1 = parseInt($("#myId1").val());
+            let item2 = parseInt($("#myId2").val());
+            let item3 = item1+item2;
+            $('#myId3').val(item3)
+            console.log(item3); 
+        }
+
+        function swap(){
+            
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <input name="Box1" id="myId1" cols="3" rows="2"> <label for=""> number 1</label>
+        <br>
+        <input name="Box2" id="myId2" cols="3" rows="2">
+        <br>
+        <input name="Box3" id="myId3" cols="3" rows="2"><label for=""> number 3</label>
+        <br>
+        <button onclick="add()" > add</button>
+
+    </div>
+    
+   
+
+</body>
+</html>

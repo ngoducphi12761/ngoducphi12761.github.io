@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        let list = ['section 1','section 2','section 3','section 3'];
+    //    let ID = setInterval(function(){
+    //         i =i+1;
+    //         $('div').css('left', i +'px');
+    //         if (i==10){
+    //             clearInterval(ID);
+    //         }
+    //     },500)
+    $(function(){
+
+        setTimeout(colorText,1000,$('div'),'red')
+        setTimeout(colorText, 2000,$('p'),'blue')
+        function colorText(self, color){
+            self.css('color', color)
+            self.css('font-size',"x-large")
+        }
+        setInterval();
+        function increaseList(){
+            let tem = $(<li></li>)
+            $('body').append();
+        }
+    })
+
+        // let str = '';
+        // setInterval(function(){
+           
+        //     str +='s'
+        //     $('#idtest').html(str)
+        // },1000);
+
+    </script>
+</head>
+<body>  
+    
+    <div id="idtest" style="position: relative;"> MY DIV</div>
+    <p style=""> test</p>
+    <h1>Heading</h1>
+    
+</body>
+</html>

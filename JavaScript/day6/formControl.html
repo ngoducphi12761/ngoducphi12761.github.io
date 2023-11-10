@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function collectData(){
+            let Namedata = $('#name');
+            
+            let mySelect = $('#nameId');
+            // let mySelect = $("<div></div>");
+             mySelect.html("");
+            // mySelect = $("<div></div>");
+            $("body").append(mySelect);
+            mySelect.append( "<lable style='font-weight: bold; font-size: large'> Name: </lable>" + Namedata.val());
+            let gender = $("[name ='gender']:checked")
+           
+            mySelect.append("<div><lable style='font-weight: bold; font-size: large'> Gender: </lable>" + gender.val()+"</div>")
+            let skills = $("input[name='skills']:checked")
+            let tempSkill = [];
+            skills.each(function(index, ele){
+            //  mySelect.append("<div><lable style='font-weight: bold; font-size: large'> Gender: </lable>" + $(ele).val()+"</div>")
+               tempSkill.push($(ele).val())
+            })
+            mySelect.append("<div> <b>Skills: </b>"+tempSkill+"</div>")
+            let country = $(".country option:selected");
+            mySelect.append("<div><b>Country: </b>"+ country.val()+"</div>")
+            let random = $(".randomOption option:selected")
+            let randomArray = []
+            random.each(function(indx, ele){
+                randomArray.push($(ele).val())
+            });
+            mySelect.append("<div><b>Country: </b>"+ randomArray+"</div>")
+            let description = $("div textarea")
+            mySelect.append("<div><b>Decription: </b>"+ description.val()+"</div>")
+        }
+    </script>
+</head>
+
+<body>
+    <div id ="nameId"></div>
+    <div>
+        <label style="margin-right: 50px;" for="">Name</label>
+        <input type="text"  name="Name" id="name">
+    </div>
+    <br>
+    <div >
+        <label style="margin-right: 50px;" for="">Gender</label>
+        <input name="gender" type="radio" checked value="male"> <label for="">male</label> 
+        <input name="gender"  type="radio" value="female"> <label for="">female</label>
+    </div>
+    <br>
+    <div>
+        <label  style="margin-right: 60px;"  for="">Skills</label>
+        <input  type="checkbox" name="skills" value="java"  checked> java
+        <input  type="checkbox" name="skills" value="javascript"> <label for="">javascript</label>
+    </div>
+    <br>
+    <div>
+        <label style="margin-right: 60px;" for="">Country</label>
+        <select class="country" id="">
+            <option selected value="usa"> USA</option>
+            <option value="Canada"> Canada</option>
+        </select>
+    </div>
+    <br>
+    <div style="display: grid; grid-template-columns: 2fr 4fr;">
+        <label for="">Random Options</label>
+        <select class="randomOption" multiple name="multiple name " style="width: 100px;">
+                <option selected> option 1</option>
+                <option selected> option 2</option>
+                <option selected> option 3</option>
+                <option selected> option 4</option>
+                <option selected> option 5</option>
+                <option selected> option 6</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label style="margin-right: 50px;" for="">Decription</label>
+        <textarea name="" id="" cols="20" rows="2"></textarea>
+    </div>
+    <button onclick="collectData()">Submit</button>
+    <div style="padding: 10px;"></div>
+    <div style="padding-top: 20px; border-bottom: 1px solid black;border-top: 1px solid black;padding-bottom: 20px; font-weight: bold;">
+        selected value
+    </div>
+   
+</body>
+
+</html

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        let list = [{ id: 2, fname: 'John', lname: 'Doe', img: 'image/chrysanthumum.jpeg' },
+        { id: 4, fname: 'Maharishi', lname: 'Mahesh', img: 'image/tulips.jpeg' }]
+
+
+        $(function () {
+            let myDiv = $('.baseDiv');
+            buildImage(list);
+        })
+
+        function buildImage(list) {
+            let str = ""
+            let myDiv = $('.baseDiv');
+            let myDivInside = $('<div></div>')
+            for (let each of list){
+    
+                    str += ' <div style="display: flex; gap: 10; border: 1px solid black; ">' +
+                    ' <img src=' + each.img + ' alt="" width="100px" height="100px" style="object-fit: contain;">' +
+                    '<div><p>' + each.fname + '</p>' + '<p>' + each.id + '</p>' +'<button onclick="deleteCol(this);">Delete</button>'+ '</div> </div>'
+
+            }
+            myDivInside.html(str);
+            myDiv.append(myDivInside);
+        }
+        function deleteCol(any){
+            $(any).parent().parent().remove();
+        }
+        function mySort() {
+            
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="mySort()">sort</button>
+    
+
+    <div class="baseDiv"></div>
+</body>
+
+</html>

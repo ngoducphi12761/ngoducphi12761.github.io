@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let arrList=["Jinna","Bill","Alseny","James"]
+        $(function(){
+            buildingList(arrList);
+   
+        });
+        function buildingList(arrList){
+
+          let mySelect = $('#mySelect');
+            if (mySelect.length===0){       
+                mySelect = $('<select id="mySelect"></select>');
+                $('body').append(mySelect);
+            }
+            mySelect.html(' ');
+            for(let each of arrList){
+                let myOption = $('<option value='+each+'>'+each+'</option>');
+                mySelect.append(myOption);
+            }
+        }
+        function filter(){
+            let filterList = arrList.filter(function(value, index, array){
+                return value.length >5;
+            });
+            buildingList(filterList) ;
+        }
+    </script>
+</head>
+<body>
+   <button onclick="filter()">filter</button>
+<!-- 
+    <select name="" id="">
+        <option value="">Jina</option>
+    </select>  -->
+</body>
+</html>

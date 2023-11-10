@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        let fruits = ['apple', 'pineapple','orange']
+        function buildArray(fruits){
+            if(fruits)
+
+            console.log("test", fruits)
+            
+            let myDiv = $("<div></div>");
+            $("body").append(myDiv);
+            myDiv.html("");
+            let html = '';
+            myDiv.append("<ul> </ul>");
+
+            for (let prop of fruits){
+                html += '<li>'+prop+'</li>';
+            }
+            //ul.html(html);
+            let ul= $('<ul>'+html+'</ul>');
+           
+            myDiv.append(ul);
+        }
+        function filter(){
+            let listFruits = fruits2.filter(function (value, indx, arr){
+                return value.length > 5;
+            })
+            console.log("test 2222", listFruits)
+            buildArray(listFruits);
+            let button = $("button")
+            button.each(function(int, ele){
+                console.log("dome", ele)
+                console.log("jquery",$(ele))
+            })
+        }
+
+        /*
+          function filterList() {
+            let myFlowers = flowers.filter(function (value) {
+                return value.length >= 5
+            })
+            buildList(myFlowers);
+        }
+        */
+
+    </script>
+</head>
+<body>
+    <button onclick="buildArray()"> create</button>
+    <button onclick="filter()"> sort and create</button>
+
+</body>
+</html>
