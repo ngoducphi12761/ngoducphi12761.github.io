@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #the-border {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            margin-left: 50px;
+           
+            background-color: #ccc;
+        }
+
+        .dot {
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            position: absolute;
+            top: 80px;
+            left: 140px;
+        }
+        .dot-head{
+            /* border: 1px solid black; */
+            width: 10px;
+            height: 10px;
+            background-size: contain;
+            /* background-color: black; */
+            position: absolute;
+            top: 80px;
+            left: 140px;
+    
+            background-image: url('head.png');
+        }
+        .dot-2 {
+            border: 1px solid black;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            position: absolute;
+        }
+
+        #food {
+
+            background-size: contain;
+            background-image: url('apple.png');
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 80px;
+            left: 140px;
+            
+        }
+
+        .grid {
+            border: 1px solid #ccc;
+            border-width: 1px 0 0 1px;
+        }
+
+        .grid div {
+            border: 1px solid #ccc;
+            border-width: 0 1px 1px 0;
+            float: left;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        createGrid(50);
+        let flag = 'true';
+        let blockSize = 10;
+        let areaWidth = 300;
+        let areaHeight = 200;
+        let speed = 300;
+        let board = $('#the-border');
+        let dir = 'top';
+        let snake_length = 1;
+        let interval_id;
+
+        $(function(){
+            placeRandomFood()
+        })
+    
+        document.addEventListener('keydown', function (event) {
+            if(event.key === 'n'){
+                $('#text').remove();
+                placeRandomFood();
+                clearInterval(interval_id);
+                interval_id = setInterval(
+                move, speed
+                );
+            }
+            switch (event.key) {
+                case 'ArrowUp':
+                    if (dir != 'top')
+                        dir = 'bottom';
+                    break;
+                case 'ArrowDown':
+                    if (dir != 'bottom')
+                        dir = 'top';
+                    break;
+                    
+                case 'ArrowLeft':
+                    if (dir != 'left')
+                        dir = 'right';
+                    break;
+                case 'ArrowRight':
+                    if (dir != 'right')
+                        dir = 'left';
+                    break;
+            }
+        });
+        function handleCollision() {
+
+            if (isSnakeInsideBoard() || isSnakeTouchingItself()) {
+                alert('game over');
+                clearInterval(interval_id);
+                let button = $('<button style="margin-top:15px; margin-left:50px" onclick="startOver()" id="strart-again-btn">Start Over </button>');
+                $('body').append(button);
+            }
+            if (isSnakeTouchingFood()) {
+                // document.querySelector('#audio').play();
+                let audio = $('#audio')[0];
+                audio.playbackRate =2;
+                audio.play();
+                placeRandomFood();
+                increaseSize();
+            }
+        }
+        function isSnakeTouchingItself(){
+            for(let i = 1; i<=snake_length;i++){
+                let snake_part = $('#dots :nth-child('+i+').dot');
+                let head = $('.dot-head');
+                let head_position = head.offset();
+                let snake_p = snake_part.offset();
+                if(Math.abs(head_position.left - snake_p.left) == 0 && Math.abs(head_position.top - snake_p.top) == 0){
+                    return true;
+                }
+            }
+            return false;
+        }
+        function increaseSize(){
+            snake_length++;
+            let dic = $('#the-border');
+                let border = dic.offset();
+                //console.log(border);
+                let element = $('.dot-head');
+                let position = element.offset();
+
+                let par = $('#dots');
+
+                let div2 = $('<div class="dot" style = "dot-2"></div>');
+                let div = $('<div class="dot-head" style = "dot-2"></div>');
+                
+                //$('#dots :first-child').remove();
+                div2.css({top:position.top, left:position.left});
+
+
+                if (dir == 'left') {
+                    div.css({top:position.top, left:position.left+10});
+                }
+                if (dir == 'top') {
+                    div.css({top:position.top + 10, left:position.left});
+                }
+                if (dir == 'bottom') {
+                    div.css({top:position.top - 10, left:position.left});
+                }
+                if (dir == 'right') {
+                    div.css({top:position.top, left:position.left-10});
+                }
+                $('.dot-head').remove();
+                par.append(div2);
+                par.append(div);
+
+        }
+
+        function isSnakeTouchingFood() {
+            let snakePos = $('.dot-head').offset();
+            let foodPos = $('#food').offset();
+            return Math.abs(snakePos.left - foodPos.left) < blockSize && Math.abs(snakePos.top - foodPos.top) < blockSize;
+        }
+
+        function isSnakeInsideBoard() {
+            let dic = $('#the-border');
+            let border = dic.offset();
+            let element = $('.dot-head');
+            let position = element.offset();
+            return border.left > position.left || position.left > border.left + areaWidth || border.top > position.top || position.top > border.top + areaHeight;
+        }
+        function getRandomNonZero() {
+            let randomNumber;
+            
+            do {
+                randomNumber = Math.random();
+            } while (randomNumber < 0.05);
+
+            return randomNumber;
+        }
+        function placeRandomFood() {
+            let width = $('#the-border').width();
+            let height = $('#the-border').height();
+            let xpos = Math.floor(getRandomNonZero() * (width / blockSize)) * blockSize + parseFloat($('#the-border').css('margin-left'));
+            let ypos = Math.floor(getRandomNonZero() * (height / blockSize)) * blockSize;
+            $('#food').css({ top: ypos, left: xpos });
+        }
+        function startOver() {
+          
+            $('document').ready(
+                location.reload()
+            );
+        }
+
+   
+        function move() {
+                
+           
+                let dic = $('#the-border');
+                let border = dic.offset();
+                //console.log(border);
+                let element = $('.dot-head');
+                let position = element.offset();
+
+                let par = $('#dots');
+
+                let div2 = $('<div class="dot" style = "dot-2"></div>');
+                let div = $('<div class="dot-head" style = "dot-2"></div>');
+                
+                $('#dots :first-child').remove();
+                div2.css({top:position.top, left:position.left});
+
+
+                if (dir == 'left') {
+                    div.css({top:position.top, left:position.left+10});
+                }
+                if (dir == 'top') {
+                    div.css({top:position.top + 10, left:position.left});
+                }
+                if (dir == 'bottom') {
+                    div.css({top:position.top - 10, left:position.left});
+                }
+                if (dir == 'right') {
+                    div.css({top:position.top, left:position.left-10});
+                }
+                $('.dot-head').remove();
+                par.append(div2);
+                par.append(div);
+                let score =snake_length-1;
+                $('#score').replaceWith($('<label id="score">'+score+'</label>'))
+                handleCollision();
+            }
+
+        function createGrid(size) {
+            console.log(size);
+            var ratioW = Math.floor($("#the-border").width() / size),
+                ratioH = Math.floor($("#the-border").height() / size);
+
+            var parent = $('<div />', {
+                class: 'grid',
+                width: ratioW * size,
+                height: ratioH * size
+            }).addClass('grid').appendTo('#the-border');
+
+            for (var i = 0; i < ratioH; i++) {
+                for (var p = 0; p < ratioW; p++) {
+                    $('<div />', {
+                        width: size - 1,
+                        height: size - 1
+                    }).appendTo(parent);
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            $('#mySelect').on('change', function() {
+            var selectedOption = $(this).find(':selected').val();
+            (selectedOption<6) ? speed = 300 - (selectedOption-1)*60 : speed = 20;
+            console.log(speed);  
+        });
+        
+        
+
+        });
+
+        function startTheGame(){
+            let some =     `<h3 id="text">Press n to start the game</h3><div id="the-border">
+                <div id="dots">
+                    <div class="dot-head"></div>
+                </div>
+                <div id="food"></div>
+                <audio id="audio" src="bite.mp3"></audio>
+                <div class></div>
+                </div> <label style="font-weight:bolder; margin-left:50px">Score: </label>
+                <label id="score">0</label>`;
+            let btn = $('#start_button');
+            btn.remove();
+            $('body').append(some);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="start_button">
+        <h3 style="display: inline-block;">Choose level: </h3>
+        <select id="mySelect">
+            <option value="1">Noob</option>
+            <option value="2">Beginner</option>
+            <option value="3">Amateur</option>
+            <option value="4">Normal</option>
+            <option value="5">Pro</option>
+            <option value="6">Sencei</option>
+        </select>
+        &nbsp;
+        <button style="background-color: green;" onclick="startTheGame()">Start</button>
+    </div>
+
+</body>
+
+</html>

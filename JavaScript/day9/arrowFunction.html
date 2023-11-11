@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        const atoms = [
+            "Hydrogen",
+            "Helium",
+            "Lithium",
+            "Beryllium"
+        ];
+
+        $(function () {
+            const lamdaEx = (num1, num2) => num1 * num2;
+            const multiply = function (num1, num2) {
+                return num1 * num2;
+            }
+            console.log("output: " + multiply(5, 5));
+            console.log("lamda: " + lamdaEx(3, 3));
+
+            const atomsLength = atoms.map(function (s) {
+                return s.length;
+            })
+            const atomsLengthV2 = atoms.map(s => s.length);
+            console.log("atomsLength: " + atomsLength);
+            console.log("atomsLengthV2: " + atomsLengthV2);
+            const filterVersion1 = atoms.filter(s => s.length >= 7);
+            console.log("filterVersion1", filterVersion1)
+            const reduceTest = (accu, val) => { return accu + val };
+            console.log(atoms.reduce(reduceTest));
+            sum(5, 5, 5);
+            sum(6, 6, 6, 6, 6);
+            let
+                arr
+        })
+
+        function sum(x, y, ...more) {
+            // "more" is array of all extra passed params
+            let total = x + y;
+            if (more.length > 0) {
+                for (let i = 0; i < more.length; i++) {
+                    total += more[i];
+                }
+            }
+            console.log("total: ", total);
+            return total;
+        }
+        function outerFn() {
+            function inner(){
+                var i = 10;
+                {
+                    if (true){
+                        
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
