@@ -120,17 +120,7 @@
 // }
 // play();
 
-// let counter = 12;
-// function increment() {
 
-//     counter++;
-//     if (counter > 5) {
-//         var counter = 10;
-//     }
-//     console.log(counter)
-// }
-// increment();
-// console.log(counter)
 
 // function objectFn(obj) {
 //     delete obj.a;
@@ -232,21 +222,21 @@
 
 
 // // 4. 
-// function test(x){ 
+function test(x){ 
 
-//     x = 10; 
+    // x = 10; 
 
-//     x++; 
+    x++; 
 
-//     return function(){ 
+    return function(){ 
 
-//         return x++; 
+        return ++x; 
 
-//     } 
+    } 
 
-// } 
+} 
 
-// console.log(test(2)()) 
+console.log(test(2)()) 
 
 
 
@@ -308,6 +298,66 @@
 // } 
 
 // department("java"); 
+//9)
 
+// let multipleItems = [45, "Maharishi", {consciousness:{inner:true}}, 777, "Bye"];
+// let [a1, second, c1, d1, fifth] = multipleItems;
+// // below have an erro when assigning the array to annother variable
+// //let [a1, e:second, c1, d1, fifth] = multipleItems;
+// let {consciousness:{inner:oo}} = c1;
+// // 
+// console.log("expect Maharishi", second);
+// console.log("expect Bye", fifth);
+// console.log("expect true", oo);
+//10)  
+//     let obj = {a:1, b:"hi", c:true, d:{inner:"object"}, f:[1,4,5]};
+//     let {a, b:message, c, d:{inner:e},f } = obj;
+//      let [one, two, ] = f;
+//    // console.log("expect {inner:'object'}", innerValue);
+//     console.log("expect Hi", message);
+//     console.log("expect object", e);
+//     console.log("expect [1,4,5]", f);
+//     console.log("expect object", two);
 
+//11)
+// let nestedObj = {nested:{inner:{i:"object"}, another:"Hello!"}};
+// let {nested:{inner:{i}, another:a}} = nestedObj;
+// console.log("expect 'Object' ", i);
+// console.log("another 'Hello' ",a);
 
+// function Counter() {
+//     var counter = 0;
+
+//     function IncreaseCounter() {
+//         return counter += 1;
+//     };
+
+//     return IncreaseCounter;
+// }
+
+// var counter = Counter();
+// console.log(Counter());
+// console.log(Counter);
+// console.log(counter()); // 1
+// console.log(counter()); // 2
+// console.log(counter()); // 3
+// console.log(counter()); // 4
+// function Counter() {
+
+//     var counter = 0;
+
+//     setTimeout(function () {
+//         var innerCounter = 0;
+//         counter += 1;
+//         console.log("counter = " + counter);
+
+//         setTimeout(function () {
+//             counter += 1;
+//             innerCounter += 1;
+//             console.log("counter = " + counter + ", innerCounter = " + innerCounter)
+//         }, 500);
+
+//     }, 1000);
+// };
+
+// Counter();
